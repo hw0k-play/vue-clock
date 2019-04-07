@@ -1,0 +1,22 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html --port 8080",
+    "build": "parcel build ./src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.6.0",
+    "sass": "^1.17.4",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
