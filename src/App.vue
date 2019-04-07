@@ -14,7 +14,7 @@ export default {
       blink: false,
       clockText: "00:00:00",
       timerFunc: null,
-      dark: true
+      dark: false
     };
   },
   created() {
