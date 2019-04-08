@@ -76,7 +76,7 @@ export default {
       background-color: $black !important;
     }
   }
-  
+
   .centered {
     display: flex;
     text-align: center;
