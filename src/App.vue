@@ -1,8 +1,12 @@
 <template>
   <div id="app" :class="dark ? 'dark' : ''">
-    <div class="centered" :class="dark ? 'dark' : ''">
+    <div class="centered text" :class="dark ? 'dark' : ''">
       {{ clockText }}
     </div>
+    <br>
+    <button class="centered mt-base btn" :class="dark ? 'dark' : ''" @click="dark = !dark">
+      {{ dark ? "Light Mode" : "Dark Mode"}}
+    </button>
   </div>
 </template>
 
@@ -14,7 +18,7 @@ export default {
       blink: false,
       clockText: "00:00:00",
       timerFunc: null,
-      dark: true
+      dark: false
     };
   },
   created() {
@@ -53,24 +57,56 @@ export default {
   $black: #2c3e50;
   $white: #ecf0f1;
 
+  @mixin textColor {
+    color: $black;
+    &.dark {
+      color: $white !important;
+    }
+  }
+
   #app {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column wrap;
     width: 100vw;
     height: 100vh;
-    background: $white;
+    background-color: $white;
     &.dark {
-      background: $black !important;
+      background-color: $black !important;
     }
   }
+  
   .centered {
     display: flex;
-    font-size: 14rem;
     text-align: center;
-    color: $black;
+  }
+  
+  .mt-base {
+    margin-top: 2rem;
+  }
+
+  .text {
+    @include textColor;
+
+    font-size: 14rem;
+  }
+
+  .btn {
+    @include textColor;
+
+    font-size: 4rem;
+    background: $white;
+    padding: 1rem 2rem;
+    border: 2px solid $black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
     &.dark {
-      color: $white !important;
+      border-color: $white;
+      background-color: $black;
     }
   }
 </style>
